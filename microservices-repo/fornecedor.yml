@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    password: gsilva11
+    username: gusto
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/fornecedor
+  jpa:
+    properties:
+      hibernate:
+        dialect: 'org.hibernate.dialect.MySQL5Dialect'
+    hibernate:
+      ddl-auto: update
