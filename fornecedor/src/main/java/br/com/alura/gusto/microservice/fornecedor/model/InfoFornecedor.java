@@ -50,5 +50,4 @@ public class InfoFornecedor {
 		this.endereco = endereco;
 	}
 	
-	
 }

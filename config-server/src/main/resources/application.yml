@@ -8,5 +8,5 @@ spring:
         encrypt:
           enabled: false
         git:
-          uri: https://github.com/Gustomize/microservices/tree/master/microservices-repo/
-          search-paths: fornecedor
+          uri: https://github.com/Gustomize/microservices/
+          search-paths: microservices-repo/fornecedor, microservices-repo/loja, microservices-repo/transportador 
