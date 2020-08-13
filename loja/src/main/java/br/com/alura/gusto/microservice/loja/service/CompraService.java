@@ -38,6 +38,11 @@ public class CompraService {
 		return null;
 	}
 	
+	@HystrixCommand(threadPoolKey = "getbyIdThreadPool")
+	public Compra getbyId(Long id) {
+		return compraRepository.findById(id).orElse(new Compra());
+	}
+	
 	@HystrixCommand(fallbackMethod = "realizaCompraFallback", threadPoolKey = "realizaCompraThreadPool")
 	public Compra realizaCompra(CompraDto compra) {
 
@@ -66,11 +71,6 @@ public class CompraService {
 		compraRepository.save(compraSalva);
 
 		return compraSalva;
-	}
-
-	@HystrixCommand(threadPoolKey = "getbyIdThreadPool")
-	public Compra getbyId(Long id) {
-		return compraRepository.findById(id).orElse(new Compra());
 	}
 
 	public Compra realizaCompraFallback(CompraDto compra) {
